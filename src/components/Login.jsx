@@ -34,6 +34,9 @@ function Login() {
         } else {
             alert(data.message);
         }
+
+        setEmail("");
+        setPassword("");
     };
 
     return (

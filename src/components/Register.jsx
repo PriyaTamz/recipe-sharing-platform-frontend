@@ -25,6 +25,10 @@ function Register() {
     } else {
       alert(data.message);
     }
+
+    setName("");
+    setEmail("");
+    setPassword("");
   };
 
   return (
