@@ -1,0 +1,71 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e6dfd4;
+  padding: 18px 24px;
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Make sure it stays on top of other elements */
+}
+
+.navbar-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #986458;
+  margin-right: 40px;
+  font-family:cursive;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 20px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #fff;
+  color: #986458;
+}
+
+.nav-link.active {
+  background-color: #986458;
+  color: #fff;
+}
+
+.logout-btn {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #cc0000;
+}
+
+/* Add space below the navbar to prevent content from being hidden behind it */
+body {
+  padding-top: 60px; /* Adjust based on the height of your navbar */
+}

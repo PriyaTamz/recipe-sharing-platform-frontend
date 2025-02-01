@@ -1,0 +1,172 @@
+/* General Container */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.history-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 50px auto;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.history-container h1 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  color: #986458;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Recipe List */
+.recipe-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recipe-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #e6dfd4;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recipe-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-item h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.recipe-item p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+/* Buttons */
+.recipe-item button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.recipe-item button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.recipe-item button.delete {
+  background-color: #dc3545;
+}
+
+.recipe-item button.delete:hover {
+  background-color: #c82333;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #e6dfd4;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #986458;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.modal-content form input,
+.modal-content form textarea {
+  width: 95%;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.modal-content form button {
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #986458;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.modal-content form button:hover {
+  background-color: #b38277;
+}
+
+/* Close Button */
+.modal-content .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.modal-content .close-btn:hover {
+  background-color: #c82333;
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

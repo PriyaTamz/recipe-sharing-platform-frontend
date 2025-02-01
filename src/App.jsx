@@ -1,80 +1,29 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import RecipeList from "./components/RecipeList";
-import RecipeDetails from "./components/RecipeDetails";
-import RecipeForm from "./components/RecipeForm";
-import SearchBar from "./components/SearchBar";
-import "./App.css";
+// src/App.js
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Dashboard from "./components/Dashboard";
+import CreateRecipe from "./components/CreateRecipe";
+import History from "./components/History";
 
-const App = () => {
-  const [recipes, setRecipes] = useState([]);
-  const [filteredRecipes, setFilteredRecipes] = useState([]);
-
-  // Fetch all recipes
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      const response = await fetch("http://localhost:3001/api/recipes");
-      const data = await response.json();
-      setRecipes(data);
-      setFilteredRecipes(data);
-    };
-    fetchRecipes();
-  }, []);
-
-  // Add a new recipe
-  const addRecipe = async (newRecipe) => {
-    const response = await fetch("http://localhost:3001/api/recipes", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newRecipe),
-    });
-    const savedRecipe = await response.json();
-    setRecipes((prev) => [...prev, savedRecipe]);
-    setFilteredRecipes((prev) => [...prev, savedRecipe]);
-  };
-
-  // Search recipes by name
-  const searchRecipes = (searchTerm) => {
-    const filtered = recipes.filter((recipe) =>
-      recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredRecipes(filtered);
-  };
-
+function App() {
   return (
     <Router>
-      <div className="app">
-        <h1>Love and Lemon</h1>
-        
-        {/* Add Recipe Button on Home Page */}
-        <div className="add-recipe-button">
-          <Link to="/add-recipe">
-            <button className="add-recipe-btn">Add Recipe</button>
-          </Link>
+      <div className="app-container">
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/create-recipe" element={<CreateRecipe />} />
+            <Route path="/history" element={<History />} />
+          </Routes>
         </div>
-
-        <Routes>
-          {/* Home Route: Recipe List */}
-          <Route
-            path="/"
-            element={
-              <>
-                <SearchBar onSearch={searchRecipes} />
-                <RecipeList recipes={filteredRecipes} />
-              </>
-            }
-          />
-          {/* Add Recipe Page */}
-          <Route
-            path="/add-recipe"
-            element={<RecipeForm onAddRecipe={addRecipe} />}
-          />
-          {/* Recipe Details Route */}
-          <Route path="/recipe/:id" element={<RecipeDetails />} />
-        </Routes>
       </div>
     </Router>
   );
-};
+}
 
 export default App;

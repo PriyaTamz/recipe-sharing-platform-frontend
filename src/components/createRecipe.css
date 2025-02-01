@@ -1,0 +1,79 @@
+/* Container Styling */
+
+
+.create-recipe-container {
+    max-width: 600px;
+    margin: 8rem auto;
+    padding: 2rem;
+    background-color: #e6dfd4; /* Light background for the container */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Title Styling */
+.title {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #986458; /* Dark green color for title */
+    margin-bottom: 1rem;
+}
+
+/* Recipe Form Styling */
+.recipe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+    align-items: center;
+}
+
+/* Form Inputs and Textarea Styling */
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Rounded borders */
+    font-size: 1rem;
+    background-color: #f7f7f7; /* Light grey for inputs and textareas */
+    color: #333; /* Dark text color */
+}
+
+/* Focused State for Inputs and Textareas */
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #986458; /* Soft brown focus border */
+    outline: none;
+    box-shadow: 0 0 4px rgba(152, 100, 88, 0.4); /* Soft glow effect */
+}
+
+/* Textarea Specific Styling */
+.form-textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Submit Button Styling */
+.submit-button {
+    padding: 0.8rem 1.5rem;
+    background-color: #986458; /* Soft brown color for the button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+}
+
+/* Submit Button Hover Effect */
+.submit-button:hover {
+    background-color: #7c4d3b; /* Darker brown on hover */
+}
